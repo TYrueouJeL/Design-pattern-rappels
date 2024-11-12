@@ -1,6 +1,6 @@
 package rappelspoo;
 
-public class Chat extends Animal {
+public class Chat extends Animal implements Chasseur, Proie {
     public Chat(String nom) {
         super(nom);
         System.out.println("CREATION DU CHAT " + nom);
@@ -21,5 +21,15 @@ public class Chat extends Animal {
     public void manger() {
         System.out.println("Le chat mange ...");
         
+    }
+
+    @Override
+    public void chasser() {
+        System.out.println("Le chat chasse ...");
+    }
+
+    @Override
+    public void mourir() {
+        System.out.println("Le chat meurt ... (gg ez skill issue)");
     }
 }

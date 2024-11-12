@@ -5,10 +5,9 @@ import java.util.List;
 
 public class AppRappels {
     public static void main(String[] args) {
-        Animal albert = new Chat("Albert");
-        Chat felix = new Chat();
+        Chat albert = new Chat("Albert");
         Chien roberto = new Chien("Roberto");
-        Animal kevin = new Chien();
+        Souris rosie = new Souris("Rosie");
 
         // ((Chat)albert).setNom("Albert");
         
@@ -30,27 +29,36 @@ public class AppRappels {
         // albert.dormir();
         // albert.manger();
 
-        // felix.dormir();
-        // felix.manger();
-
         // roberto.dormir();
         // roberto.manger();
 
-        // kevin.dormir();
-        // kevin.manger();
-
         List<Animal> animaux = new ArrayList<>();
+        List<Chasseur> chasseurs = new ArrayList<>();
+        List<Proie> proies = new ArrayList<>();
 
         animaux.add(albert);
-        animaux.add(felix);
         animaux.add(roberto);
-        animaux.add(kevin);
         animaux.add(new Chien("Norbert"));
+        animaux.add(rosie);
+
+        chasseurs.add(albert);
+        chasseurs.add(roberto);
+
+        proies.add(albert);
+        proies.add(rosie);
 
         for (Animal animal : animaux) {
             System.out.println(animal.getNom());
             animal.dormir();
             animal.manger();
+        }
+
+        for (Chasseur chasseur : chasseurs) {
+            chasseur.chasser();
+        }
+
+        for (Proie proie : proies) {
+            proie.mourir();
         }
     }
 }

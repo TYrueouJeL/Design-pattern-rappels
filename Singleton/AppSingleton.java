@@ -1,5 +1,4 @@
 package Singleton;
-
 public class AppSingleton {
     public static void main(String[] args) {
         DbContext db1 = DbContext.getInstance();
